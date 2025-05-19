@@ -16,7 +16,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "THRIFTEE",
-  description: "Thriftee-Desc",
+  description: "Sold out? Nah, just hiding here.",
   icons: {
     icon: "/favicon_thriftee2.png"
   }
