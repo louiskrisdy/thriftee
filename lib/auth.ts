@@ -67,9 +67,9 @@ export const auth = betterAuth({
       redirectURI: process.env.BASE_URL + "/api/auth/callback/google",
     },
   },
-  emailAndPassword: {
-    enabled: true,
-  },
+  // emailAndPassword: {
+  //   enabled: true,
+  // },
   // user: {
   //   additionalFields: {
   //     premium: {
