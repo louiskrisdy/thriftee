@@ -18,7 +18,7 @@ import {
   } from "@/components/ui/table";
 import { TotalOrders } from "@/lib/infer-type";
 import Image from "next/image";
-import placeholderUser from '@/public/placeholder-user.jpg'
+// import placeholderUser from '@/public/placeholder-user.jpg'
 import formatPrice from "@/lib/format-price";
 
 
@@ -55,7 +55,7 @@ import formatPrice from "@/lib/format-price";
                                         </div>
                                     ) : (
                                          <div className="flex gap-2 w-32 items-center">
-                                            <Image src={placeholderUser} width={25} height={25} alt='user not found' className="rounded-full" />
+                                            <Image src="/placeholder-user.jpg" width={25} height={25} alt='user not found' className="rounded-full" />
                                             <p className="text-xs font-medium">{order.user.name}</p>
                                         </div>
                                     )}

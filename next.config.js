@@ -8,6 +8,9 @@ const nextConfig = {
       { protocol: "https", hostname: "avatars.githubusercontent.com" },
       { protocol: "https", hostname: "utfs.io" },
       { protocol: "https", hostname: "encrypted-tbn0.gstatic.com" } // <-- example, delete later (?)
+    ],
+    formats: [
+      'image/webp'
     ]
   }
 };

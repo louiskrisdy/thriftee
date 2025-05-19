@@ -1,5 +1,4 @@
 import { db } from "@/server";
-import placeholder from "@/public/placeholder_small.png";
 import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { auth } from "@/lib/auth";
