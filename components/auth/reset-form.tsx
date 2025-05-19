@@ -66,7 +66,7 @@ export const ResetForm = () => {
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="dummy@dummy.com"
+                        placeholder="your@email.com"
                         type="email"
                         disabled={status === "executing"}
                         autoComplete="email"

@@ -114,7 +114,7 @@ export const RegisterForm = () => {
                     <FormControl>
                       <Input
                         {...field}
-                        placeholder="thriftee@email.com"
+                        placeholder="your@email.com"
                         type="email"
                         autoComplete="email"
                       />
