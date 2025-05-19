@@ -46,7 +46,7 @@ export default function RootLayout({
               <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-200 dark:text-white sm:mt-0">
                 <li><a href="/about-us" className="hover:underline me-4 md:me-6">About Us</a></li>
                 <li><a href="#" className="hover:underline me-4 md:me-6">Privacy Policy</a></li>
-                <li><a href="mailto:admin@thriftee.co.id?subject=Customer%20Inquiry&body=Hi%20Thriftee%2C%0A" className="hover:underline">Contact</a></li>
+                <li><a href="mailto:admin@thriftee.store?subject=Customer%20Inquiry&body=Hi%20Thriftee%2C%0A" className="hover:underline">Contact</a></li>
               </ul>
             </div>
           </footer>
