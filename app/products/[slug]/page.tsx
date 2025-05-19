@@ -12,8 +12,8 @@ import {NotFound} from "./not-found";
 
 export const revalidate = 60;
 
-export async function generateStaticParams() {
-    const data = await db
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
+  const data = await db
     .select({
       id: products.id,
       title: products.title,
@@ -27,13 +27,13 @@ export async function generateStaticParams() {
     .leftJoin(tags, eq(productTags.tagId, tags.id))
     .orderBy(desc(products.id));
 
-    if(!data) {
-        return [];
-    }
-    if(data) {
-        const slugID = (data).map((product) => ({ slug: product.id.toString() }));
-        return slugID;
-    }
+  if (!data) {
+    return []; // safe fallback
+  }
+
+  return data.map((product) => ({
+    slug: product.id.toString(),
+  }));
 }
 
 export default async function Page({params}: { params: { slug: string } }) {
