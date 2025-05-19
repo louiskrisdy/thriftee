@@ -66,8 +66,8 @@ export default async function Page({params}: { params: { slug: string } }) {
                         {product.verified && (
                             <div className="mb-2">
                                 <div className="flex items-center gap-1">
-                                    <BadgeCheck className="text-emerald-500 dark:text-emerald-300 w-5 h-5" />
-                                    <p className="text-emerald-500 dark:text-emerald-300 font-medium">
+                                    <BadgeCheck className="text-emerald-500 dark:text-emerald-300 w-4 h-4" />
+                                    <p className="text-emerald-500 dark:text-emerald-300 font-medium text-sm">
                                         Authenticity Verified
                                     </p>
                                 </div>
