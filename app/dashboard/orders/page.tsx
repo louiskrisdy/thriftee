@@ -66,7 +66,7 @@ export default async function Page(){
             <TableCaption>A list of your recent orders.</TableCaption>
             <TableHeader>
                 <TableRow>
-                <TableHead>Order Number</TableHead>
+                <TableHead>Order ID</TableHead>
                 <TableHead>Total</TableHead>
                 <TableHead>Status</TableHead>
                 <TableHead>Created</TableHead>

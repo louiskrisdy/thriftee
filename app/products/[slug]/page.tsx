@@ -9,6 +9,7 @@ import { db } from "@/server";
 import { products, productTags, tags } from "@/server/schema";
 import { desc, eq } from "drizzle-orm";
 import {NotFound} from "./not-found";
+import { BadgeCheck } from "lucide-react";
 
 export const revalidate = 60;
 
@@ -61,6 +62,19 @@ export default async function Page({params}: { params: { slug: string } }) {
                 </div>
                 <div className="flex flex-col flex-1">
                     <h2 className="text-2xl font-bold">{product.title}</h2>
+                    <div className="font-medium">
+                        {product.verified && (
+                            <div className="mb-2">
+                                <div className="flex items-center gap-1">
+                                    <BadgeCheck className="text-emerald-500 dark:text-emerald-300 w-5 h-5" />
+                                    <p className="text-emerald-500 dark:text-emerald-300 font-medium">
+                                        Authenticity Verified
+                                    </p>
+                                </div>
+                                <p className="text-xs text-muted-foreground">UPC: {product.upc}</p>
+                            </div>
+                        )}
+                    </div>
                     <div className="text-secondary-foreground font-medium">
                         {product.tag.tag.name ?? "No tag"}
                     </div>
