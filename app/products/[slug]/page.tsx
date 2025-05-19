@@ -28,7 +28,7 @@ export async function generateStaticParams() {
     .orderBy(desc(products.id));
 
     if(data) {
-        const slugID = data.map((product) => ({ slug: product.id.toString() }));
+        const slugID = (data ?? []).map((product) => ({ slug: product.id.toString() }));
         return slugID;
     }
 }
