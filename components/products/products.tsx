@@ -80,8 +80,11 @@ export default function Products({products}: ProductTypes) {
                                                 <TooltipTrigger asChild>
                                                 <BadgeCheck className="text-emerald-500 dark:text-emerald-300 w-4 h-4" />
                                                 </TooltipTrigger>
-                                                <TooltipContent side="top">
-                                                <p className="text-emerald-500 dark:text-emerald-300">Authenticity Verified</p>
+                                                <TooltipContent side="top" className="flex flex-col gap-1">
+                                                    <p className="text-emerald-500 dark:text-emerald-300 font-medium">
+                                                        Authenticity Verified
+                                                    </p>
+                                                    <p className="text-xs text-muted-foreground">UPC: {product.upc}</p>
                                                 </TooltipContent>
                                             </Tooltip>
                                             </TooltipProvider>
