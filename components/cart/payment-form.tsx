@@ -174,7 +174,7 @@ export default function PaymentForm({ totalPrice }: {totalPrice: number}) {
             {paymentMethod === 'credit-card' && (
 
                 <motion.div
-                    className=""
+                    className="text-muted-foreground"
                     animate={{ scale: 1, opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.3, duration: 0.5 }} exit={{ scale: 0 }}
                 >
                     <PaymentElement />
