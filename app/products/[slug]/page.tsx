@@ -27,8 +27,11 @@ export async function generateStaticParams() {
     .leftJoin(tags, eq(productTags.tagId, tags.id))
     .orderBy(desc(products.id));
 
+    if(!data) {
+        return [];
+    }
     if(data) {
-        const slugID = (data ?? []).map((product) => ({ slug: product.id.toString() }));
+        const slugID = (data).map((product) => ({ slug: product.id.toString() }));
         return slugID;
     }
 }
