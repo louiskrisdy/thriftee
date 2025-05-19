@@ -1,0 +1,1 @@
+ALTER TABLE "verification" ALTER COLUMN "token" DROP NOT NULL;

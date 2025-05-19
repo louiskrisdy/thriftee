@@ -1,0 +1,1 @@
+ALTER TABLE "products" ALTER COLUMN "image" SET DEFAULT ARRAY[]::text[];

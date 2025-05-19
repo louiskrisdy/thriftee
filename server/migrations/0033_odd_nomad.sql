@@ -1,0 +1,1 @@
+ALTER TABLE "verification" ALTER COLUMN "expires" DROP NOT NULL;
