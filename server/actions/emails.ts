@@ -11,7 +11,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   console.log(email + " EMAIL")
   const { data, error } = await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "ignadrianw@gmail.com",
+    to: email,
     subject: "Thriftee - Confirmation Email",
     html: `<p>Click to <a href='${confirmLink}'>confirm your email</p>`,
   });
@@ -26,7 +26,7 @@ export const sendPasswordResetEmail = async (email: string, token: string) => {
   console.log(email + "EMAIL");
   const { data, error } = await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "ignadrianw@gmail.com",
+    to: email,
     subject: "Thriftee - Confirmation Email",
     html: `<p>Click here <a href='${confirmLink}'>reset your password</p>`,
   });
