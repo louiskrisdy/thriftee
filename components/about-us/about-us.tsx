@@ -23,11 +23,11 @@ export default function AboutUsPage() {
         />
         <Section
           title="Circular Fashion"
-          content="We’re here to reshape consumption. Thrifting is more than a trend—it’s a movement toward a circular economy where reuse is the new norm."
+          content="We're here to reshape consumption. Thrifting is more than a trend - it's a movement toward a circular economy where reuse is the new norm."
         />
         <Section
           title="The Team"
-          content="We’re a small team of builders, creatives, and sustainability advocates. As a purpose-driven startup, we aim to make fashion ethical, affordable, and responsible."
+          content="We're a small team of builders, creatives, and sustainability advocates. As a purpose-driven startup, we aim to make fashion ethical, affordable, and responsible."
         />
       </div>
     </div>
