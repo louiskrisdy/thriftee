@@ -17,7 +17,7 @@ export default function CartMessage() {
             <DrawerDescription className="py-1">
                 {checkoutProgress === "cart-page" ? "View and edit your bag" : null}
                 {checkoutProgress === "payment-page" ? <span onClick={() => setCheckoutProgress("cart-page")} className="flex items-center justify-center gap-1 cursor-pointer hover:text-primary">Head back to cart <ArrowLeft size={14} /></span> : null}
-                {checkoutProgress === "confirmation-page" ? "You will receive an email with your receipt!" : null}     
+                {checkoutProgress === "confirmation-page" ? "View your order receipt on the order page!" : null}     
             </DrawerDescription>
         </motion.div>
     )
