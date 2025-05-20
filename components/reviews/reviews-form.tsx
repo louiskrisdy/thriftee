@@ -88,7 +88,7 @@ export default function ReviewsForm() {
                             <FormItem>
                                 <FormLabel>Leave your review</FormLabel>
                                 <FormControl>
-                                    <Textarea {...field} placeholder='How would you describe this product?' />
+                                    <Textarea className='max-h-[360px]' {...field} placeholder='How would you describe this product?' />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
