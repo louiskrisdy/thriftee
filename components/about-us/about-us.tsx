@@ -18,7 +18,7 @@ export default function AboutUsPage() {
         />
         <Section
           title="Verified Authentic"
-          content="Every item is checked for authenticity. What you see is what you get—no compromises."
+          content="Every item is checked for authenticity. We use the UPC (Universal Product Code) system to verify each product's legitimacy. By scanning and cross-referencing the UPC code, we confirm that the item matches the original manufacturer's details, helping to prevent counterfeit products and guaranteeing genuine quality. Your trust matters to us, so we make sure every piece you find on Thriftee is 100% authentic and ready to wear with confidence. What you see is what you get - no compromises."
           icon={<BadgeCheck className="text-emerald-500 dark:text-emerald-300 inline-block mb-1" size={20} />}
         />
         <Section
