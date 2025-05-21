@@ -32,6 +32,7 @@ import Image from "next/image";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import Link from "next/link";
 import formatPrice from "@/lib/format-price";
+import ReviewsForm from "@/components/reviews/reviews-form";
 
 export default async function Page(){
     const session = await auth.api.getSession({
@@ -111,6 +112,9 @@ export default async function Page(){
                                                     </Button>
                                             </DropdownMenuItem>
                                         ) : null}
+                                        <DropdownMenuItem asChild className="w-full">
+                                            <ReviewsForm />
+                                        </DropdownMenuItem>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
                                 <DialogContent className="rounded-md">
