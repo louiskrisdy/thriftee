@@ -45,6 +45,7 @@ function Hit({hit}: {hit: {
     id: string,
     price: number,
     title: string,
+    stock: number
     // productType: string,
     images: string,
     _highlightResult: {
@@ -63,6 +64,7 @@ function Hit({hit}: {hit: {
 }}}) {
 
     // console.log(hit.images);
+    if (hit.stock === 0) return null;
     return (
         <div className='p-4 mb-2 hover:bg-secondary'>
             <Link href={`/products/${hit.objectID}?id=${hit.id}&price=${hit.price}&title=${hit.title}&image=${hit.images[0]}`} >

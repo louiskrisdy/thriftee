@@ -7,6 +7,7 @@ import { headers } from "next/headers";
 import { orderProduct, orders, products as productsTable } from "../schema";
 import { db } from "..";
 import { eq } from "drizzle-orm";
+import { algoliasearch } from "algoliasearch";
 
 
 const action = createSafeActionClient();
@@ -18,6 +19,11 @@ export const createOrder = action.schema(createOrderSchema).action(async ({ pars
     if(!session?.user) {
         return { error: "user not found" };
     }
+
+    const client = algoliasearch(
+        process.env.NEXT_PUBLIC_ALGOLIA_ID!,
+        process.env.ALGOLIA_ADMIN!
+    );
 
     const order = await db.insert(orders).values({
         status,
@@ -48,6 +54,13 @@ export const createOrder = action.schema(createOrderSchema).action(async ({ pars
             .update(productsTable)
             .set({ stock: updatedStock })
             .where(eq(productsTable.id, productID));
+        client.partialUpdateObject({
+            indexName: "products",
+            objectID: productID.toString(),
+            attributesToUpdate: {
+                stock: updatedStock,
+            }
+        });
     })
     return { success: 'Order has been added' };
 })
