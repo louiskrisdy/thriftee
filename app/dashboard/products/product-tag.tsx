@@ -158,26 +158,29 @@ export default function ProductTag(
                                             <CommandList>
                                                 <CommandEmpty>No tags found.</CommandEmpty>
                                                 <CommandGroup>
-                                                {tagsList && tagsList.map((tag) => (
-                                                    <CommandItem
-                                                    key={tag.value}
-                                                    value={tag.label}
-                                                    onSelect={(currentValue) => {
-                                                        setValue(currentValue === value ? "" : currentValue);
-                                                        form.setValue("tagId", parseInt(tag.value));
-                                                        form.setValue("tagName", tag.label);
-                                                        setPopoverOpen(false);
-                                                    }}
-                                                    >
-                                                    <Check
-                                                        className={cn(
-                                                        "mr-2 h-4 w-4",
-                                                        value === tag.label ? "opacity-100" : "opacity-0"
-                                                        )}
-                                                    />
-                                                    {tag.label}
-                                                    </CommandItem>
-                                                ))}
+                                                {tagsList && tagsList.map((tag) => {
+                                                    if (!tag.label) return null;
+                                                    return (
+                                                        <CommandItem
+                                                            key={tag.value}
+                                                            value={tag.label}
+                                                            onSelect={(currentValue) => {
+                                                                setValue(currentValue === value ? "" : currentValue);
+                                                                form.setValue("tagId", parseInt(tag.value));
+                                                                form.setValue("tagName", tag.label);
+                                                                setPopoverOpen(false);
+                                                            }}
+                                                        >
+                                                            <Check
+                                                                className={cn(
+                                                                    "mr-2 h-4 w-4",
+                                                                    value === tag.label ? "opacity-100" : "opacity-0"
+                                                                )}
+                                                            />
+                                                            {tag.label}
+                                                        </CommandItem>
+                                                    );
+                                                })}
                                                 </CommandGroup>
                                             </CommandList>
                                         </CommandDialog>

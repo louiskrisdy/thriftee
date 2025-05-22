@@ -23,7 +23,10 @@ export async function deleteProductTag({
 
     
     await db
-      .delete(productTags)
+      .update(productTags)
+      .set({
+        tagId: 0,
+      })
       .where(
         and(
           eq(productTags.productId, productId),

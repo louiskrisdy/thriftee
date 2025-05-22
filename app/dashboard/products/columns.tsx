@@ -129,7 +129,7 @@ export const columns: ColumnDef<ProductColumn>[] = [
             return(
                 <div className="flex gap-1">
                     {
-                        tags ? (
+                        (tags && tags.tag.name !== "") ? (
                             <ProductTag
                             editMode={true}
                             productId={tags.productId}
