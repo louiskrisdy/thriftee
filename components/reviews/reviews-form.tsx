@@ -30,12 +30,15 @@ import { addReview } from '@/server/actions/add-review'
 import { toast } from 'sonner'
 import { useEffect, useState } from 'react'
 
+type ReviewsFormProps = {
+    productId?: number;
+  };
 
-export default function ReviewsForm() {
+export default function ReviewsForm({ productId }: ReviewsFormProps) {
 
     const params = useSearchParams();
-    const productID = Number(params.get('id'));
-
+    const parsedId = Number(params.get('id'));
+    const productID = Number(parsedId ? parsedId : productId);
     const [open, setOpen] = useState(false)
     
     const form = useForm<z.infer<typeof reviewSchema>>({

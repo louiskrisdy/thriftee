@@ -112,9 +112,6 @@ export default async function Page(){
                                                     </Button>
                                             </DropdownMenuItem>
                                         ) : null}
-                                        <DropdownMenuItem asChild className="w-full">
-                                            <ReviewsForm />
-                                        </DropdownMenuItem>
                                     </DropdownMenuContent>
                                 </DropdownMenu>
                                 <DialogContent className="rounded-md">
@@ -132,6 +129,7 @@ export default async function Page(){
                                                 <TableHead>Price</TableHead>
                                                 <TableHead>Product</TableHead>
                                                 <TableHead>Quantity</TableHead>
+                                                <TableHead>Actions</TableHead>
                                                 </TableRow>
                                             </TableHeader>
                                             <TableBody>
@@ -143,6 +141,20 @@ export default async function Page(){
                                                         <TableCell>{formatPrice(product.price)}</TableCell>
                                                         <TableCell>{product.title}</TableCell>
                                                         <TableCell>{quantity}</TableCell>
+                                                        <TableCell>
+                                                            <DropdownMenu>
+                                                                <DropdownMenuTrigger asChild>
+                                                                    <Button variant={"ghost"}>
+                                                                        <MoreHorizontal size={16} />
+                                                                    </Button>
+                                                                </DropdownMenuTrigger>
+                                                                <DropdownMenuContent>
+                                                                    <DropdownMenuItem asChild>
+                                                                        <ReviewsForm productId={product.id} />
+                                                                    </DropdownMenuItem>
+                                                                </DropdownMenuContent>
+                                                            </DropdownMenu>
+                                                        </TableCell>
                                                     </TableRow>
                                                 ))}
                                             </TableBody>
