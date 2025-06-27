@@ -150,7 +150,11 @@ export default async function Page(){
                                                                 </DropdownMenuTrigger>
                                                                 <DropdownMenuContent>
                                                                     <DropdownMenuItem asChild>
-                                                                        <ReviewsForm productId={product.id} />
+                                                                    <Button asChild className="w-full" variant={"ghost"}>
+                                                                        <Link href={`/products/${product.id}?id=${product.id}&price=${product.price}&title=${product.title}&image=${product.image?.[0]}#reviews`} target="_blank">
+                                                                            Leave a review
+                                                                        </Link>
+                                                                    </Button>
                                                                     </DropdownMenuItem>
                                                                 </DropdownMenuContent>
                                                             </DropdownMenu>

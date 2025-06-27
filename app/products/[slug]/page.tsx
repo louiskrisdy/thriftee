@@ -90,7 +90,10 @@ export default async function Page({params}: { params: { slug: string } }) {
                     <AddCart stock={product.stock!} />
                 </div>
             </section>
-            <Reviews productID={product.id} />
+            <div id="reviews">
+                <Reviews productID={product.id} />
+            </div>
+            
             </main>  
         );
     }
