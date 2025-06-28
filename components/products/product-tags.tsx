@@ -39,7 +39,7 @@ export default function ProductTags() {
                 <Badge onClick={() => setFilter("t-shirt")} className={cn("cursor-pointer bg-primary hover:bg-primary/75 hover:opacity-100", tag === "t-shirt" && tag ? 'opacity-100' : 'opacity-50')}>T-Shirt</Badge>
                 <Badge onClick={() => setFilter("pants")} className={cn("cursor-pointer bg-primary hover:bg-primary/75 hover:opacity-100", tag === "pants" && tag ? 'opacity-100' : 'opacity-50')}>Pants</Badge>
                 <Badge onClick={() => setFilter("jeans")} className={cn("cursor-pointer bg-primary hover:bg-primary/75 hover:opacity-100", tag === "jeans" && tag ? 'opacity-100' : 'opacity-50')}>Jeans</Badge>
-                <Badge onClick={() => setFilter("long sleeve")} className={cn("cursor-pointer bg-primary hover:bg-primary/75 hover:opacity-100", tag === "long-sleeve" && tag ? 'opacity-100' : 'opacity-50')}>Long Sleeve</Badge>
+                <Badge onClick={() => setFilter("long sleeve")} className={cn("cursor-pointer bg-primary hover:bg-primary/75 hover:opacity-100", tag === "long sleeve" && tag ? 'opacity-100' : 'opacity-50')}>Long Sleeve</Badge>
             </div>
             <div className="lg:hidden my-2 flex justify-end">
                     <DropdownMenu>
