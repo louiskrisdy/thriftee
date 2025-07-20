@@ -46,7 +46,7 @@ export default function Products({products}: ProductTypes) {
 
 
         <main className="grid sm:grid-cols-1 md:grid-cols-2 gap-12 lg:grid-cols-3 mb-3">
-        {filtered
+        {(paramTag ? filtered : products)
             .filter((product) => product.stock! > 0)
             .map((product) => (
                 <Link
