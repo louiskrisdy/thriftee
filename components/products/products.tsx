@@ -20,7 +20,7 @@ export default function Products({products}: ProductTypes) {
     const paramTag = params.get("tag");
 
     const filtered = useMemo(() => {
-        if(paramTag) {
+        if(paramTag && paramTag !== "") {
             return products.filter((item) => (item.tag.tag.name).toLowerCase() === paramTag);
         }
         return products;
