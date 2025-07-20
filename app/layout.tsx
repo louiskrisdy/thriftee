@@ -29,7 +29,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Script src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key={process.env.NEXT_PUBLIC_CLIENT_KEY} strategy="afterInteractive"></Script>
       <body suppressHydrationWarning className={cn("min-h-screen flex flex-col", roboto.className)}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="flex-grow px-6 md:px-12 mx-auto w-full max-w-8xl">
