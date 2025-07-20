@@ -17,7 +17,7 @@ export default function ProductTags() {
         if(tag) {
             router.push(`?tag=${tag}`);
         }
-        if(!tag) {
+        if(!tag || tag === "") {
             router.push('/');
         }
     }
