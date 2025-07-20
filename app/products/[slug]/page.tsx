@@ -8,7 +8,7 @@ import { getReviewAverage } from "@/lib/review-average";
 import { db } from "@/server";
 import { products, productTags, tags } from "@/server/schema";
 import { desc, eq } from "drizzle-orm";
-import {NotFound} from "./not-found";
+// import {NotFound} from "./not-found";
 import { BadgeCheck } from "lucide-react";
 
 export const revalidate = 60;
@@ -97,9 +97,9 @@ export default async function Page({params}: { params: { slug: string } }) {
             </main>  
         );
     }
-    else {
-        return (
-            <NotFound />
-        )
-    }
+    // else {
+    //     return (
+    //         <NotFound />
+    //     )
+    // }
 }
