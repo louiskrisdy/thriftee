@@ -21,8 +21,8 @@ export const ProductSchema = z.object({
     }),
   upc: z
     .string()
-    .length(12, {
-      message: "UPC must be exactly 12 characters",
+    .min(12, {
+      message: "UPC must be at least 12 characters",
     })
     .regex(/^\d{12}$/, {
       message: "UPC must contain exactly 12 digits",
