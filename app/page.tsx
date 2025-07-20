@@ -22,22 +22,22 @@ export default async function Home() {
   //   .leftJoin(tags, eq(productTags.tagId, tags.id))
   //   .orderBy(desc(products.id));
 
-  const data = await db.query.products.findMany({
-    with: {
-      tag: {
-        with: {
-          tag: true,
-        },
-      },
-      // reviews: true,
-    },
-  });
+  // const data = await db.query.products.findMany({
+  //   with: {
+  //     tag: {
+  //       with: {
+  //         tag: true,
+  //       },
+  //     },
+  //     // reviews: true,
+  //   },
+  // });
 
   return (
     <main>
       <Algolia />
       <ProductTags />
-      <Products products={data} />
+      <Products />
     </main>
   );
 }
