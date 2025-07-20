@@ -32,13 +32,6 @@ export default function Review({ reviews }: { reviews: ReviewsWithUser[] }) {
                                 </AvatarFallback>
                             </Avatar>
                         )}
-                        <Image
-                            className="rounded-full max-w-[32px] max-h-[32px]"
-                            width={32}
-                            height={32}
-                            alt={review.user.name!}
-                            src={review.user?.image!}
-                        />
                         <div>
                             <p className="text-sm font-bold">{review.user.name}</p>
                             <div className="flex items-center gap-2">
