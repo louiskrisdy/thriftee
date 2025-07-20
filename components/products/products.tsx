@@ -14,42 +14,17 @@ type ProductTypes = {
     products: ProductWithTag[]
 }
 
-export default function Products() {
+export default function Products({products}: ProductTypes) {
     
     const params = useSearchParams();
     const paramTag = params.get("tag");
 
-    const [products, setProducts] = useState<ProductWithTag[]>([]);
-    const [filtered, setFiltered] = useState<ProductWithTag[]>([]);
-
-
-    const fetchProducts = async () => {
-        const res = await fetch('/api/products');
-        const data = await res.json();
-        setProducts(data);
-    };
-
-
-    useEffect(() => {
-        fetchProducts();
-    }, []);
-    
-      useEffect(() => {
-        if (paramTag && paramTag !== "") {
-          setFiltered(
-            products.filter((item) => item.tag.tag.name.toLowerCase() === paramTag)
-          );
-        } else {
-          setFiltered(products);
+    const filtered = useMemo(() => {
+        if(paramTag && paramTag !== "") {
+            return products.filter((item) => (item.tag.tag.name).toLowerCase() === paramTag);
         }
-      }, [paramTag, products]);
-
-    // const filtered = useMemo(() => {
-    //     if(paramTag && paramTag !== "") {
-    //         return products.filter((item) => (item.tag.tag.name).toLowerCase() === paramTag);
-    //     }
-    //     return products;
-    // }, [paramTag, products]);
+        return products;
+    }, [paramTag, products]);
 
 
     const [showButton, setShowButton] = useState(false);
