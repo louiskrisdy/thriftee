@@ -22,14 +22,17 @@ export default function Products() {
     const [products, setProducts] = useState<ProductWithTag[]>([]);
     const [filtered, setFiltered] = useState<ProductWithTag[]>([]);
 
+
+    const fetchProducts = async () => {
+        const res = await fetch('/api/products');
+        const data = await res.json();
+        setProducts(data);
+    };
+
+
     useEffect(() => {
-        const fetchProducts = async () => {
-          const res = await fetch('/api/products');
-          const data = await res.json();
-          setProducts(data);
-        };
         fetchProducts();
-      }, []);
+    }, []);
     
       useEffect(() => {
         if (paramTag && paramTag !== "") {
