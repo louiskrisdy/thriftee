@@ -14,7 +14,7 @@ export default function ProductTags() {
     const tag = params.get("tag");
 
     const setFilter = (tag: string) => {
-        if(tag) {
+        if(tag && tag !== "") {
             router.push(`?tag=${tag}`);
         }
         if(!tag || tag === "") {
