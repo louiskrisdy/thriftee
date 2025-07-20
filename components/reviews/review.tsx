@@ -6,7 +6,7 @@ import Image from "next/image"
 import { Card } from "../ui/card"
 import { formatDistance, subDays } from 'date-fns'
 import Stars from "./stars"
-import { AvatarFallback } from "../ui/avatar"
+import { Avatar, AvatarFallback } from "../ui/avatar"
 
 export default function Review({ reviews }: { reviews: ReviewsWithUser[] }) {
     return(
@@ -24,11 +24,13 @@ export default function Review({ reviews }: { reviews: ReviewsWithUser[] }) {
                                 src={review.user?.image!}
                             />
                         ) : (
-                            <AvatarFallback className="bg-primary/25">
-                                <div className="font-bold">
-                                {review.user.name!.charAt(0).toUpperCase()}
-                                </div>
-                            </AvatarFallback>
+                            <Avatar className="w-7 h-7"> 
+                                <AvatarFallback className="bg-primary/25">
+                                    <div className="font-bold">
+                                    {review.user.name!.charAt(0).toUpperCase()}
+                                    </div>
+                                </AvatarFallback>
+                            </Avatar>
                         )}
                         <Image
                             className="rounded-full max-w-[32px] max-h-[32px]"
